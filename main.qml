@@ -2,10 +2,13 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 Window {
+    id: root
     width: 640
     height: 480
     visible: true
-    title: qsTr("QuizletMath")
-    Registration{
-    }
+    title: qsTr("Login")
+    color: "#e5ecef"
+    readonly property string login: "login"
+    readonly property string password: "password"
+    Registration{}
 }
