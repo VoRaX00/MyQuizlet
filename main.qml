@@ -7,7 +7,5 @@ Window {
     visible: true
     title: qsTr("QuizletMath")
     Registration{
-//        x: parent.width / 2 - 30
-//        y: parent .height / 2  - 30
     }
 }
