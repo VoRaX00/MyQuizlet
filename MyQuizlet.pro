@@ -1,6 +1,8 @@
-QT += quick
+QT += quick network
 
 SOURCES += \
+        Quizlet.cpp \
+        TcpClient.cpp \
         main.cpp
 
 resources.files = main.qml Registration.qml
@@ -20,3 +22,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 #DISTFILES += \
 #    Registration.qml
+
+HEADERS += \
+    Quizlet.h \
+    TcpClient.h
