@@ -8,6 +8,11 @@ Window {
     visible: true
     title: qsTr("Login")
     color: "#e5ecef"
+
+    Connections{
+        target: client
+    }
+
     readonly property string login: "login"
     readonly property string password: "password"
     Registration{}

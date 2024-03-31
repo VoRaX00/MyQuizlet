@@ -50,7 +50,7 @@ Rectangle {
             text: qsTr("Войти")
             font.pointSize: 14
             anchors.horizontalCenter: parent.horizontalCenter
-            onClicked: checkCredentials()
+            onClicked: client.loginRequest(loginTextField.text, passwordTextField.text)
             Keys.onEnterPressed: checkCredentials()
             Keys.onReturnPressed: checkCredentials()
         }
@@ -115,12 +115,12 @@ Rectangle {
         }
     }
 
-    function checkCredentials(){
-        if(loginTextField.text == root.login && passwordTextField.text == root.password){
-            successAnimation.start()
-        }
-        else{
-            failAnimation.start()
-        }
-    }
+//    function checkCredentials(){
+//        if(loginTextField.text == root.login && passwordTextField.text == root.password){
+//            successAnimation.start()
+//        }
+//        else{
+//            failAnimation.start()
+//        }
+//    }
 }

@@ -10,11 +10,12 @@ class TcpClient : public QObject
 public:
     explicit TcpClient(QObject *parent = nullptr);
 
+
 public slots:
-    void connectToServer();
-    bool loginRequest(const QString& login, const QString& password);
-    bool registrationRequest(const QString& login, const QString& password);
-    void
+
+    void loginRequest(const QString& login, const QString& password);
+    void registrationRequest(const QString& login, const QString& password);
+    void addQuizlet();
 
 private slots:
     void onConnected();
@@ -22,6 +23,9 @@ private slots:
     void onErrorOccurred(QAbstractSocket::SocketError error);
 
 signals:
+
+private:
+    void connectToServer();
 
 private:
     QTcpSocket* socket;

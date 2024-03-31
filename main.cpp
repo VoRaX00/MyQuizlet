@@ -1,7 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-
-
+#include <QQmlContext>
+#include "TcpClient.h"
+#include "Quizlet.h"
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
@@ -13,6 +14,9 @@ int main(int argc, char *argv[])
             if (!obj && url == objUrl)
                 QCoreApplication::exit(-1);
         }, Qt::QueuedConnection);
+    TcpClient client;
+    Quizlet quizlet;
+    engine.rootContext()->setContextProperty("client", &client);
     engine.load(url);
 
     return app.exec();
