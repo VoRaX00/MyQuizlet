@@ -10,7 +10,7 @@ Rectangle {
     anchors.centerIn: parent
     radius: 5
     width: 300
-    height: 250
+    height: 325
 
     Column{
         anchors.fill: parent
@@ -51,6 +51,21 @@ Rectangle {
             font.pointSize: 14
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: client.loginRequest(loginTextField.text, passwordTextField.text)
+            Keys.onEnterPressed: checkCredentials()
+            Keys.onReturnPressed: checkCredentials()
+        }
+
+        Button{
+            id: buttonRegistration
+            width:  200
+            height: 40
+            background: Rectangle {
+                color: parent.down ? "#bbbbbb" : (parent.hovered ? "d6d6d6" : "#f6f6f6")
+            }
+            text: qsTr("Зарегистрироваться")
+            font.pointSize: 14
+            anchors.horizontalCenter: parent.horizontalCenter
+            onClicked: client.registrationRequest(loginTextField.text, passwordTextField.text)
             Keys.onEnterPressed: checkCredentials()
             Keys.onReturnPressed: checkCredentials()
         }

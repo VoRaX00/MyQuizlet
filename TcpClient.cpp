@@ -17,7 +17,7 @@ void TcpClient::connectToServer() //подключаемся к серверу
 
 void TcpClient::loginRequest(const QString &login, const QString &password)
 {
-    auto data = QString("LOGIN:%1 PASSWORD:%2").arg(login, password);
+    auto data = QString("_LOGIN_\nLOGIN:%1 PASSWORD:%2").arg(login, password);
     socket->write(data.toUtf8());
     socket->flush();
     qDebug() << "login server";
@@ -25,7 +25,7 @@ void TcpClient::loginRequest(const QString &login, const QString &password)
 
 void TcpClient::registrationRequest(const QString &login, const QString &password)
 {
-    auto data = QString("LOGIN:%1 PASSWORD:%2").arg(login).arg(password);
+    auto data = QString("_REGISTRATION_\nLOGIN:%1 PASSWORD:%2").arg(login).arg(password);
     socket->write(data.toUtf8());
     socket->flush();
 }
